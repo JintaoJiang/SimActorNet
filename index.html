@@ -1,0 +1,117 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Acoters Networks</title>
+  <meta name="description" content="Demo for How to Build an Interactive Network Visualization.">
+  <meta name="author" content="Jim Vallandingham">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- CSS concatenated and minified via ant build script-->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- end CSS-->
+
+  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+  <div id="container" class="container">
+    <header>
+    <h1>Similar Actors Networks</h1>
+    <p>Actors similar to one another according to <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.227.9062&rep=rep1&type=pdf">PathSim</a>(Actors - Movies Genre - Actors) are linked together. Actor nodes are sized based on the number of movies they act, colored by the genre they act for most.</p>
+    </header>
+
+      <div id="song_selection" class="control">
+        <h3>Actor</h3>
+        <select id="song_select">
+          <option value="NULL.json">-------------</option>
+          <option value="Al_Pacino.json">Al Pacino</option>
+          <option value="Bill_Murray.json">Bill Murray</option>
+          <option value="Brad_Pitt.json">Brad Pitt</option>
+          <option value="Bruce_Willis.json">Bruce Willis</option>
+          <option value="Bryan_Cranston.json">Bryan Cranston</option>
+          <option value="Christopher_Walken.json">Christopher Walken</option>
+          <option value="Clint_Eastwood.json">Clint Eastwood</option>
+          <option value="Denzel_Washington.json">Denzel Washington</option>
+          <option value="Don_Cheadle.json">Don Cheadle</option>
+          <option value="Dustin_Hoffman.json">Dustin Hoffman</option>
+          <option value="Ed_Harris.json">Ed Harris</option>
+          <option value="Edward_Norton.json">Edward Norton</option>
+          <option value="Gary_Sinise.json">Gary Sinise</option>
+          <option value="George_Clooney.json">George Clooney</option>
+          <option value="Harrison_Ford.json">Harrison Ford</option>
+          <option value="Harvey_Keitel.json">Harvey Keitel</option>
+          <option value="J.K._Simmons.json">J.K. Simmons</option>
+          <option value="Jack_Nicholson.json">Jack Nicholson</option>
+          <option value="Jake_Gyllenhaal.json">Jake Gyllenhaal</option>
+          <option value="Morgan_Freeman.json">Morgan Freeman</option>
+          <option value="Johnny_Depp.json">Johnny Depp</option>
+          <option value="Tom_Hanks.json">Tom Hanks</option>
+
+        </select>
+
+      </div>
+    <div id="controls">
+      <div id="layouts" class="control">
+        <h3>Layout</h3>
+        <a id="force" class="active">Force Directed</a>
+        <a id="radial">Genre</a>
+      </div>
+      <div id="filters" class="control">
+        <h3>Filter</h3>
+        <a id="all" class="active">All</a>
+        <a id="popular">Popular</a>
+        <a id="obscure">Obscure</a>
+      </div>
+      <div id="sorts" class="control">
+        <h3>Sort</h3>
+        <a id="songs" class="active">Actors</a>
+        <a id="links">Links</a>
+      </div>
+      <div id="search_section" class="control">
+        <form id="search_form" action=""  method="post">
+          <p class="search_title">Search <input type="text" class="text-input" id="search" value="" /></p>
+        </form>
+      </div>
+    <div id="main" role="main">
+      <div id="vis"></div>
+    </div>
+    </div>
+  </div> <!--! end of #container -->
+
+
+  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+  <script defer src="js/plugins.js"></script>
+  <script defer src="js/script.js"></script>
+  <script src="js/libs/coffee-script.js"></script>
+  <script src="js/libs/d3.v2.js"></script>
+  <script src="js/Tooltip.js"></script>
+  <script type="text/coffeescript" src="coffee/vis.coffee"></script>
+
+  <script> // Change UA-XXXXX-X to be your site's ID
+    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    Modernizr.load({
+      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    });
+  </script>
+
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
